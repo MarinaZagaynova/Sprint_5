@@ -40,3 +40,8 @@ class Registration:
         WebDriverWait(driver, 10).until(
             expected_conditions.visibility_of_element_located((By.LINK_TEXT, locators.registration)))
         assert driver.find_element(By.CLASS_NAME, locators.entrance_button).text == "Войти"
+
+def test(driver):
+    reg  = Registration
+    reg.test_error_password(driver)
+    reg.test_correct_registration(driver)

@@ -1,4 +1,4 @@
-button_lk = ".//div[@id='root']//nav[@class='AppHeader_header__nav__g5hnF']/a[@href='/account']/p[""@class='AppHeader_header__linkText__3q_va ml-2']"  # Кнопка Личный кабинет
+button_lk = ".//a[@href='/account']"  # Кнопка Личный кабинет
 name_registration = ".//label[text()='Имя']/following::input"  # Имя на форме регистрации
 email_registration = ".//label[text()='Email']/following::input"  # email на форме регистрации
 password_registration = ".//input[@name='Пароль']"  # Пароль на форме регистрации
