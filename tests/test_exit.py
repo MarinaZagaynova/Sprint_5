@@ -6,10 +6,9 @@ import data
 import locators
 
 
-class Exit:
+class TestExit:
 
-    @staticmethod
-    def test_exit(driver):
+    def test_exit(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, locators.button_lk)))
         driver.find_element(By.XPATH, locators.button_lk).click()

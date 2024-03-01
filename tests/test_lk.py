@@ -6,10 +6,9 @@ import data
 import locators
 
 
-class Lk:
+class TestLk:
 
-    @staticmethod
-    def test_lk(driver):
+    def test_lk(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.entrance_button)))
         driver.find_element(By.CLASS_NAME, locators.entrance_button).click()

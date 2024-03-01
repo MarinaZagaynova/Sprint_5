@@ -6,9 +6,9 @@ import data
 import locators
 
 
-class Registration:
-    @staticmethod
-    def test_error_password(driver):
+class TestRegistration:
+
+    def test_error_password(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, locators.button_lk)))
         driver.find_element(By.XPATH, locators.button_lk).click()
@@ -23,8 +23,7 @@ class Registration:
         driver.find_element(By.CLASS_NAME, locators.register).click()
         assert driver.find_element(By.CLASS_NAME, locators.error_password).text == "Некорректный пароль"
 
-    @staticmethod
-    def test_correct_registration(driver):
+    def test_correct_registration(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, locators.button_lk)))
         driver.find_element(By.XPATH, locators.button_lk).click()
@@ -40,4 +39,3 @@ class Registration:
         WebDriverWait(driver, 10).until(
             expected_conditions.visibility_of_element_located((By.LINK_TEXT, locators.registration)))
         assert driver.find_element(By.CLASS_NAME, locators.entrance_button).text == "Войти"
-

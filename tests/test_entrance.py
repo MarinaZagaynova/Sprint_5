@@ -7,10 +7,9 @@ import locators
 from tests.conftest import driver
 
 
-class Entrance:
+class TestEntrance:
 
-    @staticmethod
-    def test_entrance_lk(driver):
+    def test_entrance_lk(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, locators.button_lk)))
         driver.find_element(By.XPATH, locators.button_lk).click()
@@ -23,8 +22,7 @@ class Entrance:
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.text_main)))
         assert driver.find_element(By.CLASS_NAME, locators.entrance_button).text == "Оформить заказ"
 
-    @staticmethod
-    def test_entrance_main(driver):
+    def test_entrance_main(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.entrance_button)))
         driver.find_element(By.CLASS_NAME, locators.entrance_button).click()
@@ -37,8 +35,7 @@ class Entrance:
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.text_main)))
         assert driver.find_element(By.CLASS_NAME, locators.entrance_button).text == "Оформить заказ"
 
-    @staticmethod
-    def test_entrance_registration(driver):
+    def test_entrance_registration(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, locators.button_lk)))
         driver.find_element(By.XPATH, locators.button_lk).click()
@@ -57,8 +54,7 @@ class Entrance:
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.text_main)))
         assert driver.find_element(By.CLASS_NAME, locators.entrance_button).text == "Оформить заказ"
 
-    @staticmethod
-    def test_entrance_password(driver):
+    def test_entrance_password(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, locators.button_lk)))
         driver.find_element(By.XPATH, locators.button_lk).click()

@@ -6,9 +6,8 @@ import data
 import locators
 
 
-class Constructor:
-    @staticmethod
-    def test_from_lk_to_constructor(driver):
+class TestConstructor:
+    def test_from_lk_to_constructor(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.entrance_button)))
         driver.find_element(By.CLASS_NAME, locators.entrance_button).click()
@@ -27,8 +26,7 @@ class Constructor:
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.text_main)))
         assert driver.find_element(By.CLASS_NAME, locators.text_main).text == "Соберите бургер"
 
-    @staticmethod
-    def test_constructor_souses(driver):
+    def test_constructor_souses(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.entrance_button)))
         driver.find_element(By.CLASS_NAME, locators.entrance_button).click()
@@ -45,8 +43,7 @@ class Constructor:
         driver.find_element(By.XPATH, locators.souses).click()
         assert "tab_tab_type_current__2BEPc" in driver.find_element(By.XPATH, locators.souses).get_attribute("class")
 
-    @staticmethod
-    def test_constructor_fillings(driver):
+    def test_constructor_fillings(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.entrance_button)))
         driver.find_element(By.CLASS_NAME, locators.entrance_button).click()
@@ -64,8 +61,7 @@ class Constructor:
         assert "tab_tab_type_current__2BEPc" in driver.find_element(By.XPATH, locators.fillings).get_attribute(
             "class")
 
-    @staticmethod
-    def test_constructor_buns(driver):
+    def test_constructor_buns(self, driver):
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.CLASS_NAME, locators.entrance_button)))
         driver.find_element(By.CLASS_NAME, locators.entrance_button).click()
